@@ -1,13 +1,20 @@
-# Compiled Object files
+# Project Folder 
+temp/
+build/
+
+# Image
+*.img
+*.iso
+
+# Vim
+*.swp
+
+# Temp
+*~
+~*
+*.tmp
+
+# Object
 *.slo
 *.lo
 *.o
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
