@@ -3,22 +3,36 @@ Operating System Plus Plus
 
 An Operating System Written in mostly C++
 
+Subsystem
+---------
+ZOS:
+* first stage experimenting os
+* basic functioning backbone
+
+xBoot:
+* custom EFI boot loader/manager
+* booting into ZOS/OSPP
+
 Support Platform
 ----------------
 
 Currently:
-	1. x86_32
+* x86_32
 
 Planning:
-	1. x86_64
-	2. arm (tablet, smartphone)
-	3. respberry pi (if I can get one)
+* x86_64
+* arm (tablet, smartphone)
+* respberry pi (if I can get one)
 
 Overview
 --------
 
 Features:
-	1. multiboot2
-	2. working
-
-*Release Under MIT License. 
+* multiboot2
+* Console
+* Keyboard mouse
+* Time and date
+* Memory management 
+* VESA display
+* Threading
+* Virtual file system
