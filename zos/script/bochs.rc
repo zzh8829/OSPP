@@ -1,0 +1,9 @@
+display_library: sdl
+log: log.txt
+
+clock: sync=realtime, time0=0
+ata0: enabled=1, ioaddr1=0x1f0, ioaddr2=0x3f0, irq=14
+ata1: enabled=1, ioaddr1=0x170, ioaddr2=0x370, irq=15
+ata0-slave: type=cdrom,path=zos.iso, status=inserted
+
+boot: cdrom

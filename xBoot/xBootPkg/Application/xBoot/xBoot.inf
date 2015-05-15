@@ -1,0 +1,101 @@
+[Defines]
+  INF_VERSION                    = 0x00010006
+  BASE_NAME                      = xBoot
+  FILE_GUID                      = 20db9f07-ad5f-49ad-8113-948bfbd25933
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 0.1
+  ENTRY_POINT                    = xBootMain
+
+[Sources]
+  xBoot.c
+  xBoot.h
+
+[Packages]
+  xBootPkg/xBootPkg.dec
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+
+[LibraryClasses]
+  BaseLib
+  BaseMemoryLib
+  DebugLib
+  DevicePathLib
+  DxeServicesLib
+  DxeServicesTableLib
+  EfiFileLib
+  HobLib
+  IoLib
+  MemoryAllocationLib
+  PrintLib
+  UefiApplicationEntryPoint
+  UefiBootServicesTableLib
+  UefiLib
+  UefiRuntimeServicesTableLib
+
+[Guids]
+  gEfiAcpiTableGuid
+  gEfiAcpi10TableGuid
+  gEfiAcpi20TableGuid
+  gEfiDxeServicesTableGuid
+  gEfiEventReadyToBootGuid
+  gEfiEventVirtualAddressChangeGuid
+  gEfiEventExitBootServicesGuid
+  gEfiFileInfoGuid                              ## CONSUMES ## GUID
+  gEfiFileSystemInfoGuid                        ## CONSUMES ## GUID
+  gEfiFileSystemVolumeLabelInfoIdGuid
+  gEfiGlobalVariableGuid
+  gEfiPartTypeLegacyMbrGuid
+  gEfiPartTypeSystemPartGuid
+  gEfiSasDevicePathGuid
+  gEfiImageSecurityDatabaseGuid
+  gEfiCertX509Guid
+  gEfiCertSha1Guid
+  gEfiCertSha256Guid
+  gEfiCertPkcs7Guid
+  gEfiCertRsa2048Guid
+  gEfiCertRsa2048Sha256Guid
+  gEfiCertTypeRsa2048Sha256Guid
+
+[Protocols]
+  gEfiAbsolutePointerProtocolGuid
+  gEfiAcpiTableProtocolGuid
+  gEfiBlockIoProtocolGuid																# PROTOCOL CONSUMES
+  gEfiComponentName2ProtocolGuid												# ALWAYS_CONSUMED
+  gEfiCpuArchProtocolGuid																# PROTOCOL CONSUMES
+  gEfiDebugPortProtocolGuid															# PROTOCOL CONSUMES
+  gEfiDevicePathProtocolGuid														# PROTOCOL CONSUMES
+  gEfiDevicePathToTextProtocolGuid											# ALWAYS_CONSUMED
+  gEfiDiskIoProtocolGuid																# PROTOCOL CONSUMES
+  gEfiEdidActiveProtocolGuid
+  gEfiEdidDiscoveredProtocolGuid
+  gEfiEdidOverrideProtocolGuid
+  gEfiExtScsiPassThruProtocolGuid												# PROTOCOL SOMETIMES_CONSUMES
+  gEfiFirmwareVolume2ProtocolGuid												# PROTOCOL CONSUMES
+  gEfiGraphicsOutputProtocolGuid												# PROTOCOL SOMETIMES_CONSUMES
+  gEfiHiiDatabaseProtocolGuid
+  gEfiHiiFontProtocolGuid																# PROTOCOL CONSUMES
+  gEfiHiiImageProtocolGuid
+  gEfiLoadedImageProtocolGuid														# PROTOCOL CONSUMES
+  gEfiPciIoProtocolGuid												   				# PROTOCOL CONSUMES 
+  gEfiPlatformDriverOverrideProtocolGuid
+  gEfiScsiIoProtocolGuid																# PROTOCOL SOMETIMES_CONSUMES
+  gEfiScsiPassThruProtocolGuid													# PROTOCOL SOMETIMES_CONSUMES
+  gEfiSecurity2ArchProtocolGuid
+  gEfiSecurityArchProtocolGuid
+  gEfiSimpleFileSystemProtocolGuid											# ALWAYS_CONSUMED
+  gEfiSimpleNetworkProtocolGuid													# PROTOCOL CONSUMES
+  gEfiSimplePointerProtocolGuid
+  gEfiSimpleTextInProtocolGuid													# ALWAYS_CONSUMED
+  gEfiSimpleTextInputExProtocolGuid											# ALWAYS_CONSUMED
+  gEfiSimpleTextOutProtocolGuid													# ALWAYS_CONSUMED
+  gEfiSmbiosProtocolGuid
+  gEfiStatusCodeRuntimeProtocolGuid											# PROTOCOL CONSUMES
+  gEfiTimerArchProtocolGuid
+  gEfiUnicodeCollation2ProtocolGuid											# ALWAYS_CONSUMED 
+  gEfiUnicodeCollationProtocolGuid											# ALWAYS_CONSUMED  
+
+[Pcd]
+
+[BuildOptions]
+  GCC:*_*_*_CC_FLAGS = -Os
+
